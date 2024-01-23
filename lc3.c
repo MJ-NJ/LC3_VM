@@ -67,7 +67,7 @@ int main(int argc, const char* argv[]){
     int running = 1;
     while(running){
 
-        // FETCH
+        // FETCH the values
         uint16_t instr = mem_read(reg[R_PC]++);
         uint16_t op = instr >> 12;
     }
