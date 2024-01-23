@@ -70,5 +70,56 @@ int main(int argc, const char* argv[]){
         // FETCH the values
         uint16_t instr = mem_read(reg[R_PC]++);
         uint16_t op = instr >> 12;
+
+        switch(op){
+            case OP_ADD:
+                //@{ADD}
+                break;
+            case OP_AND:
+                //@{AND}
+                break;
+            case OP_NOT:
+                //@{NOT}
+                break;
+            case OP_BR:
+                //@{BR}
+                break;
+            case OP_JMP:
+                //@{JMP}
+                break;
+            case OP_JSR:
+                //@{JSR}
+                break;
+            case OP_LD:
+                //@{LD}
+                break;
+            case OP_LDI:
+                //@{LDI}
+                break;
+            case OP_LDR:
+                //@{LDR}
+                break;
+            case OP_LEA:
+                //@{LEA}
+                break;
+            case OP_ST:
+                //@{ST}
+                break;
+            case OP_STI:
+                //@{STI}
+                break;
+            case OP_STR:
+                //@{STR}
+                break;
+            case OP_TRAP:
+                //@{TRAP}
+                break;
+            case OP_RES:
+            case OP_RTI:
+            default:
+                //@{BAD OPCODE}
+                break;
+        }
     }
+    // SHUTDOWN
 }
