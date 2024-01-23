@@ -53,7 +53,20 @@ enum{
 };
 
 int main(int argc, const char* argv[]){
+    
     // @{Load Arguments}
+    // Show usage string
+    if(argc < 2){
+        printf("lc3[image-file1]...\n");
+        exit(2);
+    }
+    for(int j=1;j<argc;++j){
+        if(!read_image(argv[j])){
+            printf("failed to load image: %s\n",argv[j]);
+            exit(1);
+        }
+    }
+
     // @{Setup}
 
     /* since exactly one condition flag should be set at any given time, set the Z flag */
@@ -71,6 +84,7 @@ int main(int argc, const char* argv[]){
         uint16_t instr = mem_read(reg[R_PC]++);
         uint16_t op = instr >> 12;
 
+    // Make a switch case of all the possible operations
         switch(op){
             case OP_ADD:
                 //@{ADD}
